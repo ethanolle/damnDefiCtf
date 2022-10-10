@@ -59,7 +59,7 @@ contract TheRewarderPool {
 
     function withdraw(uint256 amountToWithdraw) external {
         accToken.burn(msg.sender, amountToWithdraw);
-        require(liquidityToken.transfer(msg.sender, amountToWithdraw));
+        require(liquidityToken.transfer(msg. sender, amountToWithdraw));
     }
 
     function distributeRewards() public returns (uint256) {
