@@ -3,6 +3,7 @@ pragma solidity ^0.8.0;
 
 import "../DamnValuableTokenSnapshot.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
+import "hardhat/console.sol";
 
 /**
  * @title SimpleGovernance
@@ -54,6 +55,7 @@ contract SimpleGovernance {
     }
 
     function executeAction(uint256 actionId) external payable {
+        console.log(actionId, "in the execute");
         require(_canBeExecuted(actionId), "Cannot execute this action");
         
         GovernanceAction storage actionToExecute = actions[actionId];
@@ -78,6 +80,13 @@ contract SimpleGovernance {
      */
     function _canBeExecuted(uint256 actionId) private view returns (bool) {
         GovernanceAction memory actionToExecute = actions[actionId];
+        console.log(actionToExecute.executedAt == 0 );
+        console.log(block.timestamp >= actionToExecute.proposedAt + ACTION_DELAY_IN_SECONDS);
+        
+        console.log(actionToExecute.proposedAt);
+        console.log(block.timestamp);
+        console.log(ACTION_DELAY_IN_SECONDS);
+        
         return (
             actionToExecute.executedAt == 0 &&
             (block.timestamp - actionToExecute.proposedAt >= ACTION_DELAY_IN_SECONDS)
