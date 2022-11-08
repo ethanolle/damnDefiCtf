@@ -122,4 +122,7 @@ contract TrustfulOracle is AccessControlEnumerable {
         }        
         return arrayOfNumbers;
     }
+
+    //  M H h j N j c 4 Z W Y x Y W E 0 N T Z k Y T Y 1 Y z Z m Y z U 4 N j F k N D Q 4 O T J j Z G Z h Y z B j N m M 4 Y z I 1 N j B i Z j B j O W Z i Y 2 R h Z T J m N D c z N W E 5
+    //  M H g y M D g y N D J j N D B h Y 2 R m Y T l l Z D g 4 O W U 2 O D V j M j M 1 N D d h Y 2 J l Z D l i Z W Z j N j A z N z F l O T g 3 N W Z i Y 2 Q 3 M z Y z N D B i Y j Q 4
 }
